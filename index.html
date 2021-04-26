@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+</head>
+
+<body id="body" class="body">
+
+
+    <div id="settings-container" class="settings d-flex justify-content-center align-items-center">
+        <div class="settings-container background-animate">
+
+            <form action="" onsubmit="event.preventDefault()" method="post" class="form-api" id="form">
+                <h2 class="form-signin-heading d-flex justify-content-center">Trivia Settings</h2>
+
+                <label for="trivia_amount">Choose number of Questions (Max 50 questions):</label>
+                <input type="number" name="trivia_amount" id="number" class="form-control" min="1" max="50" value="10">
+
+                <br>
+
+                <label for="trivia_category">Choose a Category: </label>
+                <select name="trivia_category" class="form-control" id="category">
+                    <option value="any">Any Category</option>
+                    <option value="9">General Knowledge</option>
+                    <option value="10">Entertainment: Books</option>
+                    <option value="11">Entertainment: Film</option>
+                    <option value="12">Entertainment: Music</option>
+                    <option value="13">Entertainment: Musicals &amp; Theatres</option>
+                    <option value="14">Entertainment: Television</option>
+                    <option value="15">Entertainment: Video Games</option>
+                    <option value="16">Entertainment: Board Games</option>
+                    <option value="17">Science &amp; Nature</option>
+                    <option value="18">Science: Computers</option>
+                    <option value="19">Science: Mathematics</option>
+                    <option value="20">Mythology</option>
+                    <option value="21">Sports</option>
+                    <option value="22">Geography</option>
+                    <option value="23">History</option>
+                    <option value="24">Politics</option>
+                    <option value="25">Art</option>
+                    <option value="26">Celebrities</option>
+                    <option value="27">Animals</option>
+                    <option value="28">Vehicles</option>
+                    <option value="29">Entertainment: Comics</option>
+                    <option value="30">Science: Gadgets</option>
+                    <option value="31">Entertainment: Japanese Anime &amp; Manga</option>
+                    <option value="32">Entertainment: Cartoon &amp; Animations</option>
+                </select>
+
+                <br>
+
+                <label for="trivia_difficulty">Choose a Difficulty: </label>
+                <select name="trivia_difficulty" class="form-control" id="difficulty">
+                    <option value="any">Any Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <br>
+
+                <label for="trivia_type">Choose a Type: </label>
+                <select name="trivia_type" id="type" class="form-control">>
+                    <option value="any">Any Type</option>
+                    <option value="multiple">Multiple Choice</option>
+                    <option value="boolean">True / False</option>
+                </select>
+
+                <br>
+
+                <input type="hidden" name="token" value="c0f7e8113a9ed2657586a7fc6ef48c9c10e1e579f64fb9355441682f572a8e7b">
+
+                <br>
+
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-lg btn-danger btn-block" id="start button" onclick="loadApi()">Let's go</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+    <div class="container" id="question-container0">
+
+    </div>
+
+    <div id="send-button" class="d-none mt-4 mb-4 d-flex justify-content-center">
+        <button onclick="compare()" class="btn btn-success">
+            Send Answers
+        </button>
+    </div>
+
+    <div id="win-box" class="content-win d-flex justify-content-center align-items-center d-none">
+        <div class="win-box d-flex justify-content-center align-items-center">
+            <div>
+                <h2>
+                    You Win!!!
+                </h2>
+                <h3>you've scored <strong id="pointWin"></strong> points</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="lose-box" class="content-win d-flex justify-content-center align-items-center d-none">
+        <div class="win-box d-flex justify-content-center align-items-center">
+            <div>
+                <h2>
+                    You Lose
+                </h2>
+                <h3>you've scored <strong id="pointLose"></strong> points</h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/javascript/main.js"></script>
+</body>
+
+</html>
